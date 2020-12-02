@@ -1,0 +1,9 @@
+Hello,
+
+Thank you for using the knowledge platform!
+
+Let me walk you through them in details:
+
+The navigation menu should be built using javascript only, we should not use HTML to create the navigation menu. we build it in the app.js file not in the index.html file.
+We need to assign a specific class (any class you choose) to the section that's present in the viewport meaning that when the user is scrolling the project which consists of 4 sections they will scroll through all the 4 sections. the section that the user is currently viewing in the viewport should have a unique class that distinguish it from all the other sections. after that we will add some styling to that class to make it look different from the other sections.
+We need to create a scrolling logic that whenever the user clicks on one of the navigation menu links it will scroll down to that section. the scrolling function should have a click event listener: addEventListener('click', ...), the preventdefault function, and one of those scrolling functions scroll(), scrollintoview(), scrollTop().

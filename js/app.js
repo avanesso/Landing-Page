@@ -64,7 +64,6 @@ navConstructor();
 // Add class 'active' to section when near top of viewport
 function sectionInView () {
     for (const section of sections) {
-        // Listener for scroll to make the section and link active
         window.addEventListener("scroll", function () {
               const currentSection = section.getBoundingClientRect();
             if (currentSection.top <= 100 && currentSection.bottom >= 200) {
@@ -84,7 +83,6 @@ function scrollOnClick() {
         const navData = navLink.hash;
         const subString = document.getElementById(navData.substring(1));
         navLink.addEventListener("click", function(event) {
-
             event.preventdefault();
             subString.scrollIntoView();
 

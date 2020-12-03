@@ -83,8 +83,9 @@ function scrollOnClick() {
     for (const navLink of menuLink) {
         const navData = navLink.hash;
         const subString = document.getElementById(navData.substring(1));
-        navLink.addEventListener("click", function() {
+        navLink.addEventListener("click", function(event) {
 
+            event.preventdefault();
             subString.scrollIntoView();
 
         });

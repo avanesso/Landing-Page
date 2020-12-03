@@ -28,11 +28,15 @@ const listNav = document.querySelector("#navbar__list"),
  *
  */
 // Scrolls the page up upon reload
-window.onbeforeunload = function () {
+function scrollOnRefresh(){
+    
+    window.onbeforeunload = function () {
 
     window.scrollTo(0,0);
 
 };
+}
+scrollOnRefresh();
 
 /**
  * End Helper Functions

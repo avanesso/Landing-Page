@@ -27,7 +27,7 @@ const sections = document.querySelectorAll('section');
  * Start Helper Functions
  * 
  */
-//Scrolls the page up upon reload
+//Scrolls the page up upon reload (currently not fully functional)
 function scrollOnRefresh(){
     
     window.onbeforeunload = function () {
@@ -47,9 +47,11 @@ scrollOnRefresh();
 function navConstructor() {
     // listString variable to concatenate with nav items
     let listString = "";
-    //loop over sections NodeList
+
+    //loop over sections NodeList (elegant way)
     for (const section of sections) {
 
+        
         const sectionID = section.id;
         const sectionDataNav = section.dataset.nav;
 
@@ -60,6 +62,35 @@ function navConstructor() {
 }
 
 navConstructor();
+
+/* A long way... 
+
+function navConstructor() {
+    
+    
+    //loop over sections NodeList
+    for (const section of sections) {
+        
+        //construct every part in chunks and append them
+
+        const sectionDataNav = section.dataset.nav;
+        const sectionID = section.id;
+        const liItem = document.createElement("li");
+        const anchorItem = document.createElement("a");
+        anchorItem.classList.add("menu__link");
+        anchorItem.setAttribute("href", `#${sectionID}`);
+        anchorItem.textContent = sectionDataNav;
+        liItem.appendChild(anchorItem);
+        listNav.appendChild(liItem); 
+        
+
+    }
+    return listNav;
+    
+}
+navConstructor();
+
+*/
 
 // Add class 'active' to section when near top of viewport
 function sectionInView () {

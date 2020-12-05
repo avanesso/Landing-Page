@@ -43,27 +43,7 @@ scrollOnRefresh();
  * 
  */
 
-// create navbar in the header section
-function navConstructor() {
-    // listString variable to concatenate with nav items
-    let listString = "";
-
-    //loop over sections NodeList (elegant way)
-    for (const section of sections) {
-
-        
-        const sectionID = section.id;
-        const sectionDataNav = section.dataset.nav;
-
-        listString += `<li><a class = "menu__link" href="#${sectionID}">${sectionDataNav}</a></li>`;
-    }
-    //populating the navbar
-    listNav.innerHTML = listString;
-}
-
-navConstructor();
-
-/* A long way... 
+//A long way... 
 
 function navConstructor() {
     
@@ -90,15 +70,49 @@ function navConstructor() {
 }
 navConstructor();
 
+/*
+// create navbar in the header section (elegant way)
+function navConstructor() {
+    // listString variable to concatenate with nav items
+    let listString = "";
+
+    //loop over sections NodeList 
+    for (const section of sections) {
+
+        
+        const sectionID = section.id;
+        const sectionDataNav = section.dataset.nav;
+
+        listString += `<li><a class = "menu__link" href="#${sectionID}">${sectionDataNav}</a></li>`;
+    }
+    //populating the navbar
+    listNav.innerHTML = listString;
+}
+
+navConstructor();
 */
 
-// Add class 'active' to section when near top of viewport
+//add class 'active' to the navbar <a> element depending on relation to the section being viewed
+function linkView(check) {
+    const links = document.querySelectorAll(".menu__link");
+    for (const link of links) {
+        if (link.textContent === check) {
+            link.classList.add("active");
+        } else {
+            link.classList.remove("active");
+        }
+    }
+}
+
+// Add class 'your-active-class' to section when near top of viewport
 function sectionInView () {
     for (const section of sections) {
         window.addEventListener("scroll", function () {
+              const compare = section.dataset.nav;
               const currentSection = section.getBoundingClientRect();
             if (currentSection.top <= 100 && currentSection.bottom >= 200) {
                 section.classList.add("your-active-class");
+                linkView(compare);
                 } else {
                 section.classList.remove("your-active-class");
             }

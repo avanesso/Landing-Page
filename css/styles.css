@@ -67,6 +67,11 @@ section {
 /* ---- Module Rules ---- */
 
 /* Navigation Styles*/
+.navbar__menu{
+    top:0;
+    left:0;
+    
+}
 .navbar__menu ul {
     padding:12px;
     padding-left: 0;
@@ -93,6 +98,13 @@ section {
     color: #fff;
     transition: ease 0.3s all;
     border-radius: 6px;
+}
+
+.active {
+    background: rgb(186, 224, 182);
+    transition: ease 0.5s all;
+    border-radius: 6px;
+    text-transform: lowercase;
 }
 
 /* Header Styles */

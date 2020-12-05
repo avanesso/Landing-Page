@@ -1,36 +1,28 @@
 
+Project Title:
+Udacity Landing Page Project
 
-
-
-
-
-readme-template
-A template for github readme's. Originally found at https://gist.github.com/PurpleBooth/109311bb0361f32d87a2 and made by @PurpleBooth
-
-Project Title
-#Udacity Landing Page Project
-
-Getting Started
+Getting Started:
 The code can be downloaded via accesing code(green button with arrow pointing down)>Download ZIP> save to your local folder
 
-Running
+Running:
 open Index.html file in your prefered browser
 
 
-Prerequisites
+Prerequisites:
 Any hardware capable running a modern day browser will do
 
 
-Built With
+Built With:
 HTML
 CSS
 JS
 
 
-Authors
+Authors:
 Andrey G. 
 
 
-License
+License:
 None, free for all
 
